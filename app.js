@@ -33,12 +33,12 @@ app.use('/api/newEcommerce/cart' , cartRouter);
 app.use('/api/newEcommerce/orders' , orderRouter);
 app.use('/api/newEcommerce/dashboard' , dashboardRouter);
 
-app.get("/health", (req, res) => {
-  return res.status(200).json({
-    status: "success",
-    message: "Server is healthy",
-  });
-});
+// app.get("/health", (req, res) => {
+//   return res.status(200).json({
+//     status: "success",
+//     message: "Server is healthy",
+//   });
+// });
 
 app.all('/{*splat}' , (req , res , next)=>{
     next(new AppError(`can not find the ${req.originalUrl} on this server!` , 404));
